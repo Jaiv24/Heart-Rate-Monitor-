@@ -1,5 +1,5 @@
 # Jaiv
-<<<<<<< HEAD
+
    - full parts kit
    - STM32 connected with 7 segment from parts kit https://github.com/Jaiv24/Heart-Rate-Monitor-/tree/master/Hardware/7segment%20firmware
    - ST-LINK v2
@@ -26,5 +26,3 @@
      to provide temperature to realtime database.
    - stm32
    - st-link
-
->>>>>>> a22033b6dd9e3eb2cb98ff5030e85ef1087e0c86
