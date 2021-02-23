@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "851991577466",
+    "project_id": "heartrate-firebase",
+    "storage_bucket": "heartrate-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851991577466:android:8ce61165e379431c318cc3",
+        "android_client_info": {
+          "package_name": "com.ceng355.heartrate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851991577466-069eker98f9mmdca73q15acmst933kaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQXNq-bpUbd6XJ7nvnjrL96QyV8bcVEG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851991577466-069eker98f9mmdca73q15acmst933kaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851991577466:android:daaf323d9af64fd3318cc3",
+        "android_client_info": {
+          "package_name": "com.example.firebaseheartratemonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851991577466-069eker98f9mmdca73q15acmst933kaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQXNq-bpUbd6XJ7nvnjrL96QyV8bcVEG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851991577466-069eker98f9mmdca73q15acmst933kaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
