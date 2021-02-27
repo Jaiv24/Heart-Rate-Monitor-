@@ -25,7 +25,7 @@ public class person
     {
         this.firstname = firstname;
     }
-    
+
     public String getMeasuredValue()
     {
         return measuredValue;
