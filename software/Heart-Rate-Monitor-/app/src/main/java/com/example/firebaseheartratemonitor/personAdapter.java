@@ -34,11 +34,11 @@ public class personAdapter extends FirebaseRecyclerAdapter<
         // view (here "person.xml")
         holder.firstname.setText(model.getFirstname());
 
-
+        holder.temperature.setText(model.getTemperature());
         // Add age from model class (here
         // "person.class")to appropriate view in Card
         // view (here "person.xml")
-        holder.measuredValue.setText(model.getMeasuredValue());
+        holder.heartrate.setText(model.getHeartRate());
     }
 
     // Function to tell the class about the Card view (here
@@ -60,15 +60,16 @@ public class personAdapter extends FirebaseRecyclerAdapter<
     // view (here "person.xml")
     class personsViewholder
             extends RecyclerView.ViewHolder {
-        TextView firstname, measuredValue;
+        TextView firstname, heartrate, temperature;
         public personsViewholder(@NonNull View itemView)
         {
             super(itemView);
 
-            firstname
-                    = itemView.findViewById(R.id.firstname);
+            firstname = itemView.findViewById(R.id.firstname);
 
-            measuredValue = itemView.findViewById(R.id.age);
+            temperature = itemView.findViewById(R.id.temperature);
+
+            heartrate = itemView.findViewById(R.id.heartrate);
         }
     }
 }

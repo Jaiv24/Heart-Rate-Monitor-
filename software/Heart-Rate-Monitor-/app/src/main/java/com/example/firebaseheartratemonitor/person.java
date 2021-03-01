@@ -10,8 +10,8 @@ public class person
 
     // Variable to store data corresponding
     // to age keyword in database
-    private String measuredValue;
-
+    private String heartRate;
+    private String temperature;
     // Mandatory empty constructor
     // for use of FirebaseUI
     public person() {}
@@ -26,12 +26,21 @@ public class person
         this.firstname = firstname;
     }
 
-    public String getMeasuredValue()
+    public String getTemperature()
     {
-        return measuredValue;
+        return temperature;
     }
-    public void setMeasuredValue(String measuredValue)
+    public void setTemperature  (String temperature)
     {
-        this.measuredValue = measuredValue;
+        this.temperature = temperature;
+    }
+
+    public String getHeartRate()
+    {
+        return heartRate;
+    }
+    public void setHeartRate(String heartRate)
+    {
+        this.heartRate = heartRate;
     }
 }
