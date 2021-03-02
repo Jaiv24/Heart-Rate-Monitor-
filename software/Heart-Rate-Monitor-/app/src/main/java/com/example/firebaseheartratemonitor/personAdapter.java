@@ -60,7 +60,7 @@ public class personAdapter extends FirebaseRecyclerAdapter<
     // view (here "person.xml")
     class personsViewholder
             extends RecyclerView.ViewHolder {
-        TextView firstname, heartrate, temperature;
+        TextView  heartrate, firstname, temperature;
         public personsViewholder(@NonNull View itemView)
         {
             super(itemView);

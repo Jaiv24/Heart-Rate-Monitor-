@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         // query in the database to fetch appropriate data
         FirebaseRecyclerOptions<person> options
                 = new FirebaseRecyclerOptions.Builder<person>()
-                .setQuery(mbase, person.class)
+                .setQuery(FirebaseDatabase.getInstance().getReference(), person.class)
                 .build();
         // Connecting object of required Adapter class to
         // the Adapter class itself
