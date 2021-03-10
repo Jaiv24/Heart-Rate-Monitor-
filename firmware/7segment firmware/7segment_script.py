@@ -1,5 +1,6 @@
 # Author: Jaiv Shah
 # Course: CENG355
+# This is a python script to get the data from firebase and send it to Arduino IDE 
 import pyrebase
 import argparse
 import datetime
