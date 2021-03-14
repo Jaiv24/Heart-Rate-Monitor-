@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.Button;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,13 +35,14 @@ public class readTempData extends AppCompatActivity {
         list = new ArrayList<>();
 
         adapter = new AdapterTemp(this, list);
+
         // Connecting Adapter class with the Recycler view*/
         recyclerView.setAdapter(adapter);
 
         mbase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                list.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     ModelTemp model = dataSnapshot.getValue(ModelTemp.class);
                     list.add(model);
