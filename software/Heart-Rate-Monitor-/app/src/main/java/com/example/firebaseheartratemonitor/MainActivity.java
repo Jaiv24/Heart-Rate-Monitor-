@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler1);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.smoothScrollBy(0,1 );
+        recyclerView.smoothScrollBy(0,1);
         list = new ArrayList<>();
 
         moveTempDataBtn = findViewById(R.id.moveTempDataBtn);
