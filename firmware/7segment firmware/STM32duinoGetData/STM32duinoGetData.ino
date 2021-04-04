@@ -6,19 +6,21 @@
 #define E PA4
 #define F PA5
 #define G PA6
-
+String a0 = "1";
+String a = "2";
+String b = "3";
+String c = "4";
+String d = "5";
+String aa = "6";
+String bb = "7";
+String cc = "8";
+String dd = "9";
 
 void setup() {
   Serial.begin(9600);
-   Serial.begin(9600);
- while (!Serial){
-  ;
- }
- 
- Serial.println("Arduino is ready");
-
-
- 
+  while (!Serial){
+    ;
+  }
   pinMode(A, OUTPUT);
   pinMode(B, OUTPUT);
   pinMode(C, OUTPUT);
@@ -31,42 +33,87 @@ void setup() {
 }
 
 void loop() {
-  if(Serial.available()){
-     //  Serial.println("0 1 2 3 4 5 6 7 8 9");
-  sevenSeg(1, 1, 1, 1, 1, 1, 0); //   0
-  delay(500);
+  if(Serial.available()){ // only send data back if data has been sent
+//      int fromString[] = a.getBytes();
+//      String inString = Serial.readString();
+//    byte [] msg = Serial.read();
+//    byte plain[a.length()];
+//    byte inString = a.getBytes(plain, a.length(), 0); // read the incoming data
+//      if(inString == a){
+      sevenSeg(1, 1, 1, 0, 0, 1, 0); // C
+      delay(500);
+      sevenSeg(0, 1, 1, 1, 0, 0, 1); // o
+      delay(500);
+      sevenSeg(0, 1, 0, 1, 0, 0, 1); // n
+      delay(500);
+      sevenSeg(0, 1, 0, 1, 0, 0, 1); // n
+      delay(500);
+      sevenSeg(1, 1, 1, 0, 0, 1, 1); // E
+      delay(500);
+      sevenSeg(1, 1, 1, 0, 0, 1, 0); // c
+      delay(500);
+      sevenSeg(1, 1, 1, 0, 0, 0, 1); // t
+      delay(500);
+      sevenSeg(1, 1, 1, 0, 0, 1, 1); // E
+      delay(500);
+      sevenSeg(0, 1, 1, 1, 1, 0, 1); // d
+      delay(500);
+//    
+    }else{
+      sevenSeg(0, 0, 0, 0, 0, 0, 1); //  1
+      delay(500);
+    }
+//  else if(inString == a0){
+//      sevenSeg(0, 0, 0, 1, 1, 0, 0); //  1
+//      delay(500);
+//  }
+//  }else if(inString == b){
+//      sevenSeg(0, 0, 1, 1, 1, 1, 1); // 3
+//      delay(500);
+//  }
+//  else if(inString == c){
+//      sevenSeg(1, 0, 0, 1, 1, 0, 1); // 4
+//      delay(500);
+//  }
+//  else if(inString == d){
+//      sevenSeg(1, 0, 1, 1, 0, 1, 1); // 5
+//      delay(500);
+//  }
+//  else if(inString == aa){
+//      sevenSeg(1, 1, 1, 1, 0, 1, 1); // 6
+//      delay(500);
+//  }
+//  else if(inString == bb){
+//      sevenSeg(0, 0, 0, 1, 1, 1, 0); // 7
+//      delay(500);
+//  }
+//  else if(inString == cc){
+//      sevenSeg(1, 1, 1, 1, 1, 1, 1); // 8
+//      delay(500);
+//  }
+//  else if(inString == dd){
+//      sevenSeg(1, 0, 1, 1, 1, 1, 1); // 9
+//      delay(500);
+//  }
+//  } else{
+//  sevenSeg(1, 1, 1, 1, 1, 1, 0);
+//  }//   0 
+//  if(Serial.available() > 0){
+//     //  Serial.println("0 1 2 3 4 5 6 7 8 9");
+//
+//
+//    if(Serial.readString() == a){
+//      sevenSeg(0, 0, 0, 1, 1, 0, 0); //  1
+//      Serial.println("0 1 2 3 4 5 6 7 8 9");
+//      delay(500);
+//    }
+//
+////
+//  sevenSeg(0, 1, 1, 0, 1, 1, 1); // 2
+//  delay(500);
+//
+  }
 
-  sevenSeg(0, 0, 0, 1, 1, 0, 0); //  1
-  delay(500);
-
-
-  sevenSeg(0, 1, 1, 0, 1, 1, 1); // 2
-  delay(500);
-
-  sevenSeg(0, 0, 1, 1, 1, 1, 1); // 3
-  delay(500);
-
-  sevenSeg(1, 0, 0, 1, 1, 0, 1); // 4
-  delay(500);
-
-  sevenSeg(1, 0, 1, 1, 0, 1, 1); // 5
-  delay(500);
-
-  sevenSeg(1, 1, 1, 1, 0, 1, 1); // 6
-  delay(500);
-  sevenSeg(0, 0, 0, 1, 1, 1, 0); // 7
-  delay(500);
-  sevenSeg(1, 1, 1, 1, 1, 1, 1); // 8
-  delay(500);
-  sevenSeg(1, 0, 1, 1, 1, 1, 1); // 9
-  delay(500);
-  }else{
-  sevenSeg(1, 1, 1, 1, 1, 1, 0);
-  }//   0 
-
-
-
-}
 
 
 void sevenSeg (int g, int f, int e, int d, int c, int b, int a)
@@ -80,3 +127,28 @@ void sevenSeg (int g, int f, int e, int d, int c, int b, int a)
   digitalWrite(G, g);
 
 }
+//  sevenSeg(1, 1, 1, 1, 1, 1, 0); //   0
+//  delay(500);
+
+//sevenSeg(0, 0, 0, 1, 1, 0, 0); //  1
+//    delay(500);
+//  sevenSeg(0, 1, 1, 0, 1, 1, 1); // 2
+//  delay(500);
+//
+//  sevenSeg(0, 0, 1, 1, 1, 1, 1); // 3
+//  delay(500);
+//
+//  sevenSeg(1, 0, 0, 1, 1, 0, 1); // 4
+//  delay(500);
+//
+//  sevenSeg(1, 0, 1, 1, 0, 1, 1); // 5
+//  delay(500);
+//
+//  sevenSeg(1, 1, 1, 1, 0, 1, 1); // 6
+//  delay(500);
+//  sevenSeg(0, 0, 0, 1, 1, 1, 0); // 7
+//  delay(500);
+//  sevenSeg(1, 1, 1, 1, 1, 1, 1); // 8
+//  delay(500);
+//  sevenSeg(1, 0, 1, 1, 1, 1, 1); // 9
+//  delay(500);
