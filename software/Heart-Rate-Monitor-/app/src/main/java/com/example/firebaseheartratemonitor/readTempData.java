@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,5 +59,9 @@ public class readTempData extends AppCompatActivity {
 
             }
         });
+
+
     }
+
+
 }

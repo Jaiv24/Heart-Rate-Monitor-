@@ -12,11 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseHeartRateMonitor">
         <activity android:name=".send_seven_seg">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
             </intent-filter>
         </activity>
-        <activity android:name=".readTempData" />
+        <activity android:name=".readTempData" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity android:name=".splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

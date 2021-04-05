@@ -10,8 +10,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler1"
-        android:layout_width="391dp"
-        android:layout_height="492dp"
+        android:layout_width="408dp"
+        android:layout_height="489dp"
         app:layout_constraintBottom_toTopOf="@+id/moveTempDataBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -34,7 +34,6 @@
         android:id="@+id/sendDataToSevenSegBtn"
         android:layout_width="426dp"
         android:layout_height="69dp"
-        android:layout_marginTop="5dp"
         android:layout_marginBottom="8dp"
         android:text="DISPLAY SOMETHING TO SEVEN_SEGMENT"
         app:layout_constraintBottom_toBottomOf="parent"
