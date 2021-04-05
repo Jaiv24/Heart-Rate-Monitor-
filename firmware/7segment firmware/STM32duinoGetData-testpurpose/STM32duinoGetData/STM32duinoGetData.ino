@@ -38,39 +38,39 @@ void loop() {
 
       if(inString == a){
         sevenSeg(0, 1, 1, 0, 1, 1, 1); // 2
-        delay(500);
+        delay(2000);
       }
       else if(inString == a0){
       sevenSeg(0, 0, 0, 1, 1, 0, 0); //  1
-      delay(500);
+      delay(2000);
       }
       else if(inString == b){
       sevenSeg(0, 0, 1, 1, 1, 1, 1); // 3
-      delay(500);
+      delay(2000);
       }
       else if(inString == c){
       sevenSeg(1, 0, 0, 1, 1, 0, 1); // 4
-      delay(500);
+      delay(2000);
       }
       else if(inString == d){
       sevenSeg(1, 0, 1, 1, 0, 1, 1); // 5
-      delay(500);
+      delay(2000);
       }
       else if(inString == aa){
       sevenSeg(1, 1, 1, 1, 0, 1, 1); // 6
-      delay(500);
+      delay(2000);
       }
       else if(inString == bb){
       sevenSeg(0, 0, 0, 1, 1, 1, 0); // 7
-      delay(500);
+      delay(2000);
       }
       else if(inString == cc){
       sevenSeg(1, 1, 1, 1, 1, 1, 1); // 8
-      delay(500);
+      delay(2000);
       }
       else if(inString == dd){
       sevenSeg(1, 0, 1, 1, 1, 1, 1); // 9
-      delay(500);
+      delay(2000);
       }
       else{
       sevenSeg(1, 1, 1, 0, 0, 1, 0); // C
