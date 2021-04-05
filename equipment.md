@@ -1,13 +1,13 @@
 # Jaiv
 
    - full parts kit
-   - STM32 connected with 7 segment from parts kit https://github.com/Jaiv24/Heart-Rate-Monitor-/tree/master/Hardware/7segment%20firmware
+   - `STM32` connected with 7 segment from parts kit https://github.com/Jaiv24/Heart-Rate-Monitor-/tree/master/Hardware/7segment%20firmware
    - ST-LINK v2
    - FTDI USB to TTL Serial Adapter Module for Arduino	
 
 # Kanjav
    - full parts kit
-   - STM32 connected with heart pulse sensor module https://www.amazon.ca/Heart-Pulse-Sensor-Module-Arduino/dp/B01CFGOZM0/
+   - `STM32` connected with heart pulse sensor module https://www.amazon.ca/Heart-Pulse-Sensor-Module-Arduino/dp/B01CFGOZM0/
      via https://github.com/WorldFamousElectronics/PulseSensorStarterProject/tree/master/PulseSensor_StarterProject_Arduino
      - st-link
    - Uploding to virtual machine.
