@@ -15,7 +15,7 @@ public class Model
 
     public String getHeartRate()
     {
-        return HeartRate;
+        return HeartRate + " bpm";
     }
 
 }

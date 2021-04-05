@@ -11,6 +11,6 @@ public class ModelTemp {
 
     public String getTemperature()
     {
-        return Temperature;
+        return Temperature + "°C";
     }
 }
