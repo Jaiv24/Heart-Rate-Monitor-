@@ -24,7 +24,7 @@ const int analogPin = 0;    // pin that the sensor is attached to
 const int ledPin = 13;       // pin that the LED is attached to
 const int threshold = 2000;   // an arbitrary threshold level that's in the range of the analog input
 
-// seven segment varibles
+// seven segment variables
 #define A PA0
 #define B PA1
 #define C PA2
@@ -35,6 +35,8 @@ const int threshold = 2000;   // an arbitrary threshold level that's in the rang
 
 // sd card variables 
 String serData;
+String fileData;
+
 File myFile;
 char serIn;
 int incomingByte = 0; // for incoming serial data
@@ -87,7 +89,7 @@ void setup() {
     }
     
     Serial.println("-- Default Test --");
-    delayTime = 3000;
+    delayTime = 30000;
 
     Serial.println();
 }
@@ -98,7 +100,7 @@ void loop() {
   printValues();
   delay(delayTime);
   
-  // potentimeter code begin 
+  // potentiometer code begin
   // read the value of the potentiometer:
   int analogValue = analogRead(analogPin);
   Serial.println(analogValue);// print the analog value:   
@@ -106,7 +108,7 @@ void loop() {
   // if the analog value is high enough, turn on the LED:
   if(analogValue > threshold){
     digitalWrite(LED_BUILTIN, LOW); 
-    delay(1);  
+    delay(30000);  
   } else {
     digitalWrite(LED_BUILTIN, HIGH);
     delay(1);  
@@ -114,66 +116,58 @@ void loop() {
 
   // sd card code begin
   // read data from the port
-    while(Serial.available() > 0){
+     while(Serial.available() > 0){
     char rec = Serial.read();
-    if(rec != '\n'){
+    //if(rec != '\n'){
       serData += rec;
-    }
-  // open file
-    if(rec == '\n'){
-       myFile = SD.open("test.txt", FILE_WRITE);
-    
-      // if the file opened okay, write to it:
-      if (myFile) {
-        Serial.print("Writing to test.txt...");
-        myFile.println(serData);
-        // close the file:
-        myFile.close();
-        Serial.println("done.");
-      } else {
-        // if the file didn't open, print an error:
-        Serial.println("error opening test.txt");
-      }
-      myFile.close();
-      Serial.flush();
-      serData = "";
-    }
-
-   //
-    readData();
+    //}
   }
 
-  // seven segment code begin
-  delay(10);
-  sevenSeg(1,1,1,1,1,1,0);   //   0
-  delay(500);
+  if(serData != ""){
+     myFile = SD.open("test.txt", FILE_WRITE);
+  
+    // if the file opened okay, write to it:
+    if (myFile) {
+      Serial.print("Writing to test.txt...");
+      myFile.print(serData);
+      // close the file:
+      myFile.close();
+      Serial.println("done.");
+    } else {
+      // if the file didn't open, print an error:
+      Serial.println("error opening test.txt");
+    }
+    myFile.close();
+    Serial.flush();
+    serData = "";
+  } 
+  readData();
+  delay(3000);
 
-  sevenSeg(0,0,0,1,1,0,0);  //  1
-  delay(500);
-
-  sevenSeg(0,1,1,0,1,1,1);  // 2
-  delay(500);
-
-  sevenSeg(0,0,1,1,1,1,1); // 3
-  delay(500);
-
-  sevenSeg(1,0,0,1,1,0,1); // 4
-  delay(500);
-
-  sevenSeg(1,0,1,1,0,1,1); // 5
-  delay(500);
-
-  sevenSeg(1,1,1,1,0,1,1);  // 6
-  delay(500);
-
-  sevenSeg(0,0,0,1,1,1,0);  // 7
-  delay(500);
-
-  sevenSeg(1,1,1,1,1,1,1); // 8
-  delay(500);
-
-  sevenSeg(1,0,1,1,1,1,1); // 9
-  delay(500);
+  // These statement will only run when there is data on serial monitor.
+  if(Serial.available()){ // only send data back if data has been sent. And Whole thing will display 'Connected'
+      sevenSeg(1, 1, 1, 0, 0, 1, 0); // C
+      delay(500);
+      sevenSeg(0, 1, 1, 1, 0, 0, 1); // o
+      delay(500);
+      sevenSeg(0, 1, 0, 1, 0, 0, 1); // n
+      delay(500);
+      sevenSeg(0, 1, 0, 1, 0, 0, 1); // n
+      delay(500);
+      sevenSeg(1, 1, 1, 0, 0, 1, 1); // E
+      delay(500);
+      sevenSeg(1, 1, 1, 0, 0, 1, 0); // c
+      delay(500);
+      sevenSeg(1, 1, 1, 0, 0, 0, 1); // t
+      delay(500);
+      sevenSeg(1, 1, 1, 0, 0, 1, 1); // E
+      delay(500);
+      sevenSeg(0, 1, 1, 1, 1, 0, 1); // d
+      delay(500);
+    }else{
+      sevenSeg(0, 0, 0, 0, 0, 0, 1); //  display { - } (Not connected)
+      delay(500);
+    }
 
 
 }
@@ -186,20 +180,28 @@ void printValues() {
 }
 // read data from the file on the sd card 
 void readData(){
-   myFile = SD.open("test.txt");
+  myFile = SD.open("test.txt");
   if (myFile) {
-    char readData[125] = {0};
+    char readData[125];
     char x;
     int counter = 0;
+
+    memset(readData, 0, sizeof(readData));
     // read from the file until there's nothing else in it:
     while (myFile.available())   
     {
-      if((x = myFile.read()) != '\n'){
+      x = myFile.read();
+      if(x == '\n'){
+        Serial.println(readData);
+        memset(readData, 0, sizeof(readData));
+        counter = 0;
+      }
+      else
+      {
         readData[counter]= x;
         counter++;        
-      }         
-    }
-    Serial.println(readData);
+      }               
+    }   
     // close the file:
     myFile.close();
   } else {
@@ -207,6 +209,7 @@ void readData(){
     Serial.println("error opening test.txt");
   }
 }
+
 // 7 segment function
 void sevenSeg (int g, int f, int e, int d, int c, int b, int a)
 {

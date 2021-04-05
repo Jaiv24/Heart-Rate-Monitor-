@@ -8,7 +8,7 @@ import datetime
 import time
 import argparse
 
-import serial
+import ser
 
 time_str = datetime.datetime.now().strftime("%Y%b%d_%I:%M:%S%p").upper()
 
@@ -60,7 +60,7 @@ while 1:
     # reading temperature from the port
     print("Reading temperature...")
     time.sleep(1)
-    ser=serial.Serial("/dev/ttyACM0", 9600)
+    ser=ser.Serial("/dev/ttyACM0", 9600)
     x=ser.readline().decode('utf-8')
     time_str = datetime.datetime.now().strftime("%Y%b%d_%I:%M:%S%p").upper()
     print(x)
@@ -83,13 +83,12 @@ while 1:
     print("Data Sent!")
     time.sleep(1)
     # writing data to the port so it can be picked by the arduino code and sent into the sd card
-    ser.write((date.val() + '\n').encode())
-    y = ser.readline()
-    print(y)
+    try:
+        while True:
+            dataStr = ser.readline().decode('utf-8').strip()
+            print(dataStr)
+    except KeyboardInterrupt:
+        pass
+    print("Closing terminal")
     ser.close()
 
-# with serial.Serial("/dev/ttyACM0", 9600) as ser:
-#     ser.write((date.val() + '\n').encode())
-#     y = ser.readline()
-#     print(y)
-#     ser.close()
