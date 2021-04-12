@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-
                 // This Will not give repeating data
                 list.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
