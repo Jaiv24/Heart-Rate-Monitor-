@@ -1,0 +1,3 @@
+Heart Rate and Temperature Monitoring System
+Category: Wearable
+Team Members: Alexandra Hutan, Jaivkumar Shah, Kanjav Patel, Pushpinder Kaur

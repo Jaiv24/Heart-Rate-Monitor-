@@ -1,0 +1,16 @@
+Executive Summary
+The paper proposes an IoT based system that monitors the heart rate from an output given by a
+hardware system consisting of a micro controller and a pulse sensor. The user will use this
+device as a wearable to check heart rate and body temperature, and be able to monitor their
+own heart rate through a mobile application.
+The main board for this device will be the STM32 Microcontroller. This board will be connected
+to the Firebase database where our app will be in constant communication to show real-time
+values.
+BME280 will be reading the temperature data and the Pulse Sensor Amped will be reading the
+heart rate data from the user. All the data collected then will be sent to the Firebase’s RealTime
+Database, where the 7-Segment will pick up the data for display and an SD card Adapter will
+pick the data up for storage.
+The user can see the data in a mobile application that displays real time data from the database.
+
+Link Towards Youtube Video :
+https://youtu.be/LKBqTUXIRbM
