@@ -5,3 +5,4 @@
 - This application also fetches the time and date the heart rate was measured.
 - This project also uses `BME280` to measure temprature.
 - This project uses `UsbSerial` Library https://github.com/felHR85/UsbSerial
+- Link Towards Youtube Video : https://youtu.be/LKBqTUXIRbM
